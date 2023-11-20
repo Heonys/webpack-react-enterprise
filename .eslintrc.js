@@ -3,22 +3,30 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "eslint-config-prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "eslint-config-prettier",
+    "plugin:jest/recommended",
+  ],
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
-      parser: "@typescript-eslint/parser",
       plugins: ["@typescript-eslint"],
       extends: ["plugin:@typescript-eslint/recommended"],
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
+      parser: "@typescript-eslint/parser",
     },
   ],
-  plugins: ["react", "prettier"],
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "prettier", "jest"],
   rules: {
     "prettier/prettier": "error",
+    "@typescript-eslint/no-namespace": "off",
+    "react/no-unknown-property": ["error", { ignore: ["css"] }],
   },
 };

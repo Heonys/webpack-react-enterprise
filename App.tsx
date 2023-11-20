@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import Emotion from "./src/Emotion";
+import Tailwind from "./src/Tailwind";
 
 const App = () => {
-  const [value, setValue] = useState("");
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
-
   return (
-    <div>
-      <div>{"asd" + "123"}</div>
-      <input type="text" value={value} onChange={handleChange} />
-    </div>
+    <>
+      <Emotion />
+      <Tailwind />
+    </>
   );
 };
 
