@@ -10,9 +10,10 @@ module.exports = {
   devtool: "eval",
   resolve: {
     extensions: [".jsx", ".js", ".tsx", ".ts"],
+    alias: { "@": path.resolve(__dirname, "./src/") },
   },
   entry: {
-    main: "./index.tsx",
+    main: "./src/index.tsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),

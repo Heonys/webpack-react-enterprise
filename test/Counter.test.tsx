@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Test from "../src/Counter";
+import Test from "../src/components/Counter";
 
 describe("<Test />", () => {
   it("matches snapshot", () => {

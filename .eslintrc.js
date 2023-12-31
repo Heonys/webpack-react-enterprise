@@ -28,5 +28,6 @@ module.exports = {
     "prettier/prettier": "error",
     "@typescript-eslint/no-namespace": "off",
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
+    "@typescript-eslint/ban-ts-ignore": "off",
   },
 };
