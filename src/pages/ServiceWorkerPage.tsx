@@ -3,8 +3,8 @@ import React from "react";
 
 const ServiceWorkerPage = () => {
   const handleClick = async () => {
-    const data = await axios("/user");
-    console.log(data);
+    const data = await axios.post("/api/user", { id: Date.now(), message: "hello" });
+    console.log("ServiceWorkerPage :: ", data);
   };
 
   return <button onClick={handleClick}>mocking</button>;

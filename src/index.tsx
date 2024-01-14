@@ -1,26 +1,19 @@
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./tailwind.css";
-import { RecoilRoot } from "recoil";
 import { RouterProvider } from "react-router-dom";
 import router from "./routes";
 import LoadingSpinner from "./components/LoadingSpinner";
+import worker from "@/mocks/worker";
 
-async function enableMocking() {
-  if (process.env.NODE_ENV !== "development") {
-    return;
-  }
-  const { worker } = await import("./mocks/worker");
-  return worker.start();
+if (process.env.NODE_ENV === "development") {
+  worker.start();
 }
 
-enableMocking().then(() => {
-  const root = createRoot(document.getElementById("root")!);
-  root.render(
-    <Suspense fallback={<LoadingSpinner />}>
-      <RecoilRoot>
-        <RouterProvider router={router} />
-      </RecoilRoot>
-    </Suspense>,
-  );
-});
+const root = createRoot(document.getElementById("root")!);
+
+root.render(
+  <Suspense fallback={<LoadingSpinner />}>
+    <RouterProvider router={router} />
+  </Suspense>,
+);
