@@ -10,6 +10,7 @@ module.exports = {
     "plugin:react/recommended",
     "eslint-config-prettier",
     "plugin:jest/recommended",
+    "plugin:storybook/recommended"
   ],
   overrides: [
     {
