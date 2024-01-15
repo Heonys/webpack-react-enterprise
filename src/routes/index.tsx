@@ -5,6 +5,7 @@ import App from "../App";
 const RecoilPage = lazy(() => import("@/pages/RecoilPage"));
 const ServiceWorkerPage = lazy(() => import("@/pages/ServiceWorkerPage"));
 const ReactQuery = lazy(() => import("@/pages/ReactQuery"));
+const TestPage = lazy(() => import("@/pages/TestPage"));
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       { path: "/recoil", element: <RecoilPage /> },
       { path: "/msw", element: <ServiceWorkerPage /> },
       { path: "/rq", element: <ReactQuery /> },
+      { path: "/test", element: <TestPage /> },
     ],
   },
 ]);
