@@ -22,10 +22,3 @@ const RecoilPage = () => {
 };
 
 export default RecoilPage;
-
-/* 
-기본적인 recoil 사용법
-셀렉터 사용법
-
-추가예정 -> 비동기처리, atomEffect, 테스팅 
-*/
