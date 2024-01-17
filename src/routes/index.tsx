@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { DialogProvider } from "@/hook/useDialog";

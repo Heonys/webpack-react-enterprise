@@ -1,13 +1,6 @@
 import styled from "@emotion/styled";
 import { createPortal } from "react-dom";
-import React, {
-  ReactElement,
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { ReactElement, Dispatch, SetStateAction, createContext, useContext, useState } from "react";
 
 type DialogContextType = {
   dialog: ReactElement | null;

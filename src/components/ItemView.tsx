@@ -1,6 +1,5 @@
 import { itemAtom } from "@/atom/ItemAtom";
 import { css } from "@emotion/react";
-import React from "react";
 import { useRecoilValue } from "recoil";
 
 const listStyle = css`

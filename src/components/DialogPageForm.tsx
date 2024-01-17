@@ -1,6 +1,6 @@
 import { DialogContainer } from "@/hook/useDialog";
 import styled from "@emotion/styled";
-import React, { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 const StyledPage = styled.div`
   display: flex;

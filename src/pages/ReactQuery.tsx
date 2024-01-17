@@ -1,4 +1,3 @@
-import React from "react";
 import useUserQuery from "@/hook/useUserQuery";
 
 const ReactQuery = () => {

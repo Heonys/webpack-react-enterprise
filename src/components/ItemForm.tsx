@@ -1,6 +1,6 @@
 import { Item, addItems, totalPriceItems } from "@/atom/ItemAtom";
 import { css } from "@emotion/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
 const formStlye = css`

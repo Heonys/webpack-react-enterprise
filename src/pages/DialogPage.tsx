@@ -1,4 +1,3 @@
-import React from "react";
 import DialogPageForm from "@/components/DialogPageForm";
 import { useDialog } from "@/hook/useDialog";
 import ErrorDialog from "@/components/ErrorDialog";

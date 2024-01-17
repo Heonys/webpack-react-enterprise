@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useRef } from "react";
+import { ReactElement, ReactNode, useRef } from "react";
 type Props = {
   header: ReactElement;
   footer: ReactElement;
