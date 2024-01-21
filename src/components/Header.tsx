@@ -1,21 +1,26 @@
 import { Link } from "react-router-dom";
-import { css } from "@emotion/react";
+import { Tabs, TabList, Tab } from "@chakra-ui/react";
 
-const navStyled = css`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-`;
+const nav = [
+  { to: "/recoil", title: "Recoil" },
+  { to: "/msw", title: "MSW" },
+  { to: "/rq", title: "React Query" },
+  { to: "/dialog", title: "Dialog" },
+  { to: "/util", title: "Util" },
+  { to: "/test", title: "TestPage" },
+];
 
 const Header = () => {
   return (
-    <nav css={navStyled}>
-      <Link to={`/recoil`}>Recoil</Link>
-      <Link to={`/msw`}>MSW</Link>
-      <Link to={`/rq`}>React Query</Link>
-      <Link to={`/dialog`}>Dialog</Link>
-      <Link to={`/test`}>TestPage</Link>
-      <Link to={`/util`}>Util</Link>
-    </nav>
+    <Tabs>
+      <TabList>
+        {nav.map((item) => (
+          <Link key={item.to} to={item.to}>
+            <Tab>{item.title}</Tab>
+          </Link>
+        ))}
+      </TabList>
+    </Tabs>
   );
 };
 
