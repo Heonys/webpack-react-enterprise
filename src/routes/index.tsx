@@ -8,6 +8,7 @@ const ServiceWorkerPage = lazy(() => import("@/pages/ServiceWorkerPage"));
 const ReactQuery = lazy(() => import("@/pages/ReactQuery"));
 const TestPage = lazy(() => import("@/pages/TestPage"));
 const DialogPage = lazy(() => import("@/pages/DialogPage"));
+const UtilPage = lazy(() => import("@/pages/UtilPage"));
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
         ),
       },
       { path: "/test", element: <TestPage /> },
+      { path: "/util", element: <UtilPage /> },
     ],
   },
 ]);

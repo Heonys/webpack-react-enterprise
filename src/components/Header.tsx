@@ -14,6 +14,7 @@ const Header = () => {
       <Link to={`/rq`}>React Query</Link>
       <Link to={`/dialog`}>Dialog</Link>
       <Link to={`/test`}>TestPage</Link>
+      <Link to={`/util`}>Util</Link>
     </nav>
   );
 };

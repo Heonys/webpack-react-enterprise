@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react";
 import { SelectBox, SelectBoxProps } from "./SelectBox";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export default {
   title: "Example/SelectBox",

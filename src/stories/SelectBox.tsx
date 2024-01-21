@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { ComponentPropsWithoutRef } from "react";
+import React, { ComponentPropsWithoutRef } from "react";
 
 export type SelectBoxProps = {
   options: { value: string; label: string }[];
