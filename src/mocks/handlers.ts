@@ -6,8 +6,8 @@ export type UserType = {
 };
 
 const users: UserType[] = [
-  { id: 1, message: "izereal" },
-  { id: 2, message: "yasuo" },
+  { id: 1, message: "Mocking ID 1" },
+  { id: 2, message: "Mocking ID 2" },
 ];
 
 export const handlers = [
@@ -21,7 +21,7 @@ export const handlers = [
   }),
   http.post("/api/user", async ({ request }) => {
     const data = await request.json();
-    (data as UserType).message += "[new]";
+    (data as UserType).message += "[MSW]";
     users.push(data as UserType);
     return HttpResponse.json(users, { status: 200 });
   }),

@@ -1,4 +1,5 @@
 import useUserQuery from "@/hook/useUserQuery";
+import { Box, Button, List, ListItem, Stack } from "@chakra-ui/react";
 
 const ReactQuery = () => {
   const {
@@ -7,20 +8,25 @@ const ReactQuery = () => {
   } = useUserQuery({ staleTime: 1000 * 10 });
 
   const handleClick = () => {
-    mutate({ id: Date.now(), message: "mutation" });
+    mutate({ id: Date.now(), message: "item" });
   };
 
   return (
-    <section>
-      <button onClick={handleClick}>optimistic update</button>
-      {!isLoading && (
-        <ul>
-          {data?.map((user) => {
-            return <li key={user.id}>{user.message}</li>;
-          })}
-        </ul>
-      )}
-    </section>
+    <Box p="5">
+      <Stack spacing={4} direction="column" align="center">
+        <Box>Optimistic Update</Box>
+        <Button colorScheme="blue" size="sm" onClick={handleClick}>
+          Add item (Delay 0.5)
+        </Button>
+        {!isLoading && (
+          <List>
+            {data?.map((user) => {
+              return <ListItem key={user.id}>{user.message}</ListItem>;
+            })}
+          </List>
+        )}
+      </Stack>
+    </Box>
   );
 };
 

@@ -13,7 +13,7 @@ export const itemAtom = atom<Item[]>({
   effects: [
     ({ onSet }) => {
       onSet((newItem) => {
-        console.debug("Updated Item:", newItem);
+        console.debug("Updated Item Effect:", newItem);
       });
     },
   ],

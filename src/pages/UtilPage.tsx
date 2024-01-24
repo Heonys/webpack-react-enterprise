@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { produce } from "immer";
 import { v4 as uuid } from "uuid";
-import classNames from "classnames";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { Box, Button, Input, InputGroup, List, ListItem, Stack } from "@chakra-ui/react";
 
 type Todo = {
   id: string;
@@ -38,12 +38,6 @@ const UtilPage = () => {
     },
   ]);
 
-  const borderClass = classNames({
-    "p-2 border rounded-lg": true,
-    "focus:outline-none": true,
-    "focus:ring-2": true,
-  });
-
   const handleClickTodo = (id: string) => () => {
     setTodos(
       produce((draft) => {
@@ -63,24 +57,33 @@ const UtilPage = () => {
 
   return (
     <div>
-      <ul>
+      <Box p="5">
         <form onSubmit={handleSubmit(handleSubmitAddTodo)}>
-          <input type="text" className={borderClass} {...register("title")} />
-          <button>add Todo</button>
+          <Stack spacing={4} direction="row" align="center">
+            <InputGroup size="md" width="auto">
+              <Input type="text" placeholder="Enter Todo" {...register("title")} />
+            </InputGroup>
+            <Button size="md" ml={2} type="submit">
+              Add
+            </Button>
+          </Stack>
         </form>
         {errors.title && <span>This field is required</span>}
-
-        {todos.map(({ id, title, done }) => {
-          return (
-            <li key={id}>
-              <span>
-                {title} {done ? "미완료" : "완료"}
-              </span>
-              <button onClick={handleClickTodo(id)}>click</button>
-            </li>
-          );
-        })}
-      </ul>
+        <List>
+          {todos.map(({ id, title, done }) => {
+            return (
+              <ListItem key={id}>
+                <Box>
+                  {title} {done ? "미완료" : "완료"}
+                  <Button size={"xs"} onClick={handleClickTodo(id)}>
+                    click
+                  </Button>
+                </Box>
+              </ListItem>
+            );
+          })}
+        </List>
+      </Box>
     </div>
   );
 };

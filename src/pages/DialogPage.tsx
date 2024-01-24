@@ -1,6 +1,7 @@
 import DialogPageForm from "@/components/DialogPageForm";
 import { useDialog } from "@/hook/useDialog";
 import ErrorDialog from "@/components/ErrorDialog";
+import { Button } from "@chakra-ui/react";
 
 const DialogPage = () => {
   const { setDialog } = useDialog();
@@ -11,7 +12,9 @@ const DialogPage = () => {
 
   return (
     <DialogPageForm header={<h1>header</h1>} footer={<h5>footer</h5>}>
-      <button onClick={handleClick}>에러버튼</button>
+      <Button colorScheme="red" variant="outline" size="sm" onClick={handleClick}>
+        Error Dialog
+      </Button>
     </DialogPageForm>
   );
 };
