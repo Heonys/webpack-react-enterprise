@@ -10,7 +10,7 @@ const ServiceWorkerPage = () => {
     if (data.status === 200) {
       toast({
         title: "[MSW] POST /api/user (200 OK)",
-        position: "top",
+        position: "bottom",
         status: "success",
         duration: 2500,
         isClosable: true,

@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @apply flex justify-center;
+    @apply bg-white text-black;
+}
+
+
+#root {
+    width: 100%;
+    max-width: 80%;
+}

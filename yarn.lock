@@ -4671,6 +4671,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-oauth/google@npm:^0.12.1":
+  version: 0.12.1
+  resolution: "@react-oauth/google@npm:0.12.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: fe23e3c0a4d0b9999fcd7b932b1a42bf94fdab526473931d780d08742455b8861fc647857b3b491e258ecef4a407dbf7321440c0d00890e23059d487795f92fb
+  languageName: node
+  linkType: hard
+
 "@remix-run/router@npm:1.14.1":
   version: 1.14.1
   resolution: "@remix-run/router@npm:1.14.1"
@@ -9352,6 +9362,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv-defaults@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "dotenv-defaults@npm:2.0.2"
+  dependencies:
+    dotenv: "npm:^8.2.0"
+  checksum: 14b7b8f6c21a30404106384398728746e63405bfeabe47ef7aadd0e81de49986d5896a612e5b1acddf655af6472a24947b7b113aa3ef3270a2877afa9c5bd287
+  languageName: node
+  linkType: hard
+
 "dotenv-expand@npm:^10.0.0":
   version: 10.0.0
   resolution: "dotenv-expand@npm:10.0.0"
@@ -9359,10 +9378,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv-webpack@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "dotenv-webpack@npm:8.0.1"
+  dependencies:
+    dotenv-defaults: "npm:^2.0.2"
+  peerDependencies:
+    webpack: ^4 || ^5
+  checksum: ddd12406e7b27a9f324110d34ddf6efdf386f8f6dbbf903cb74b63ed582c28262197eadca4e20cdee55d1e427cc4acd47c9dadd38bfc49219ae215d0b688c2e8
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^16.0.0":
   version: 16.3.1
   resolution: "dotenv@npm:16.3.1"
   checksum: b95ff1bbe624ead85a3cd70dbd827e8e06d5f05f716f2d0cbc476532d54c7c9469c3bc4dd93ea519f6ad711cb522c00ac9a62b6eb340d5affae8008facc3fbd7
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^8.2.0":
+  version: 8.6.0
+  resolution: "dotenv@npm:8.6.0"
+  checksum: 6750431dea8efbd54b9f2d9681b04e1ccc7989486461dcf058bb708d9e3d63b04115fcdf8840e38ad1e24a4a2e1e7c1560626c5e3ac7bc09371b127c49e2d45f
   languageName: node
   linkType: hard
 
@@ -14522,6 +14559,7 @@ __metadata:
     "@emotion/styled": "npm:^11.11.0"
     "@hookform/resolvers": "npm:^3.3.4"
     "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.5.11"
+    "@react-oauth/google": "npm:^0.12.1"
     "@storybook/addon-essentials": "npm:7.6.8"
     "@storybook/addon-interactions": "npm:7.6.8"
     "@storybook/addon-links": "npm:7.6.8"
@@ -14550,6 +14588,7 @@ __metadata:
     classnames: "npm:^2.5.1"
     clean-webpack-plugin: "npm:^4.0.0"
     css-loader: "npm:^6.8.1"
+    dotenv-webpack: "npm:^8.0.1"
     eslint: "npm:^8.53.0"
     eslint-config-prettier: "npm:^9.0.0"
     eslint-plugin-jest: "npm:^27.6.0"

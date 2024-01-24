@@ -17,7 +17,7 @@ const todoSchema = z.object({
   title: z.string().trim().min(1, { message: "title is required" }),
 });
 
-const UtilPage = () => {
+const TodoPage = () => {
   const {
     register,
     handleSubmit,
@@ -88,4 +88,4 @@ const UtilPage = () => {
   );
 };
 
-export default UtilPage;
+export default TodoPage;

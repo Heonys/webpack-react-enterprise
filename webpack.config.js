@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 const child_process = require("child_process");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -57,5 +58,6 @@ module.exports = {
         `,
     }),
     new ReactRefreshPlugin(),
+    new Dotenv(),
   ],
 };

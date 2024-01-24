@@ -5,19 +5,23 @@ import RecoilPage from "@/pages/RecoilPage";
 import ServiceWorkerPage from "@/pages/ServiceWorkerPage";
 import ReactQuery from "@/pages/ReactQuery";
 import DialogPage from "@/pages/DialogPage";
-import TestPage from "@/pages/TestPage";
-import UtilPage from "@/pages/UtilPage";
+import ProfilePage from "@/pages/ProfilePage";
+import TodoPage from "@/pages/TodoPage";
 import MainPage from "@/pages/MainPage";
+import NotFoundPage from "@/components/NotFound";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <NotFoundPage />,
     children: [
       { index: true, element: <MainPage /> },
       { path: "/recoil", element: <RecoilPage /> },
       { path: "/msw", element: <ServiceWorkerPage /> },
       { path: "/rq", element: <ReactQuery /> },
+      { path: "/todo", element: <TodoPage /> },
       {
         path: "/dialog",
         element: (
@@ -26,8 +30,14 @@ const router = createBrowserRouter([
           </DialogProvider>
         ),
       },
-      { path: "/test", element: <TestPage /> },
-      { path: "/util", element: <UtilPage /> },
+      {
+        path: "/profile",
+        element: (
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
 ]);
