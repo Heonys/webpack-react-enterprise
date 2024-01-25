@@ -5,6 +5,7 @@ const webpack = require("webpack");
 const child_process = require("child_process");
 const ReactRefreshPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
@@ -48,6 +49,8 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: "./public/index.html",
+      filename: "./index.html",
+      favicon: "./public/favicon.ico",
     }),
     new CleanWebpackPlugin(),
     new webpack.BannerPlugin({
@@ -59,5 +62,6 @@ module.exports = {
     }),
     new ReactRefreshPlugin(),
     new Dotenv(),
+    new BundleAnalyzerPlugin(),
   ],
 };

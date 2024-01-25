@@ -10,6 +10,7 @@ import TodoPage from "@/pages/TodoPage";
 import MainPage from "@/pages/MainPage";
 import NotFoundPage from "@/components/NotFound";
 import ProtectedRoute from "./ProtectedRoute";
+import LanguagePage from "@/pages/LanguagePage";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "/msw", element: <ServiceWorkerPage /> },
       { path: "/rq", element: <ReactQuery /> },
       { path: "/todo", element: <TodoPage /> },
+      { path: "/i18n", element: <LanguagePage /> },
       {
         path: "/dialog",
         element: (

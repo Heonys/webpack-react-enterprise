@@ -1,8 +1,22 @@
 import { Link, useLocation } from "react-router-dom";
-import { Tabs, TabList, Tab, Box, Stack, Button } from "@chakra-ui/react";
+import {
+  Tabs,
+  TabList,
+  Tab,
+  Box,
+  Stack,
+  Button,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Image,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/context/AuthContext";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 const nav = [
   { tabIndex: 0, to: "/", title: "Main" },
@@ -12,16 +26,22 @@ const nav = [
   { tabIndex: 4, to: "/dialog", title: "Dialog" },
   { tabIndex: 5, to: "/todo", title: "Todo" },
   { tabIndex: 6, to: "/profile", title: "Profile" },
+  { tabIndex: 7, to: "/i18n", title: "i18n" },
 ];
 
 const Header = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const { profile, login, logout } = useAuth();
+  const { i18n } = useTranslation();
 
   const location = useLocation();
 
   const handleTabsChange = (index: number) => {
     setTabIndex(index);
+  };
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
   };
 
   useEffect(() => {
@@ -60,6 +80,33 @@ const Header = () => {
               로그인
             </Button>
           )}
+          <Menu>
+            <MenuButton size="sm" as={Button} rightIcon={<ChevronDownIcon />}>
+              언어
+            </MenuButton>
+            <MenuList>
+              <MenuItem minH="48px" onClick={() => changeLanguage("en")}>
+                <Image
+                  boxSize="2rem"
+                  borderRadius="full"
+                  src="https://flagsapi.com/US/shiny/64.png"
+                  alt="Fluffybuns the destroyer"
+                  mr="12px"
+                />
+                <span>English</span>
+              </MenuItem>
+              <MenuItem minH="40px" onClick={() => changeLanguage("kr")}>
+                <Image
+                  boxSize="2rem"
+                  borderRadius="full"
+                  src="https://flagsapi.com/KR/shiny/64.png"
+                  alt="Simon the pensive"
+                  mr="12px"
+                />
+                <span>Korean</span>
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </Stack>
       </Stack>
     </Box>

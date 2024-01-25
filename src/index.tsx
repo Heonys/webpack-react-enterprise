@@ -7,11 +7,14 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import router from "./routes";
 import LoadingSpinner from "./components/LoadingSpinner";
 import { AuthContextProvider } from "./context/AuthContext";
+import "@/i18n";
 
 (async () => {
   if (process.env.NODE_ENV === "development") {
     const worker = (await import("@/mocks/worker")).default;
-    await worker.start();
+    await worker.start({
+      onUnhandledRequest: "bypass",
+    });
   }
   const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID!;
 
