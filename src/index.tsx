@@ -10,7 +10,8 @@ import { AuthContextProvider } from "./context/AuthContext";
 import "@/i18n";
 
 (async () => {
-  if (process.env.NODE_ENV === "development") {
+  // 현재는 API서버를 MSW로 모킹하고 있기떄문에 production 모드에서도 테스트 용으로 MSW를 사용함
+  if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "production") {
     const worker = (await import("@/mocks/worker")).default;
     await worker.start({
       onUnhandledRequest: "bypass",

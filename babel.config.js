@@ -4,5 +4,10 @@ module.exports = {
     ["@babel/preset-react", { runtime: "automatic" }],
     "@babel/preset-typescript",
   ],
-  plugins: ["react-refresh/babel", "@emotion/babel-plugin"],
+  plugins: [
+    "@emotion/babel-plugin",
+    ...(process.env.NODE_ENV === "development"
+      ? [["react-refresh/babel", { skipEnvCheck: true }]]
+      : []),
+  ],
 };

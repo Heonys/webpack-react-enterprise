@@ -25,9 +25,10 @@ const RecoilPage = () => {
             ID 2
           </Button>
         </Stack>
-        {users.contents.map((user: UserType) => {
-          return <div key={user.id}>{user.message}</div>;
-        })}
+        {users &&
+          users.contents.map((user: UserType) => {
+            return <div key={user.id}>{user.message}</div>;
+          })}
       </Box>
       <ItemForm />
       <ItemView />

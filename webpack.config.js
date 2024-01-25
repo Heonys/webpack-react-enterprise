@@ -8,7 +8,7 @@ const Dotenv = require("dotenv-webpack");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: "development",
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   devtool: "eval",
   resolve: {
     extensions: [".jsx", ".js", ".tsx", ".ts"],
@@ -60,8 +60,9 @@ module.exports = {
             Author: ${child_process.execSync("git config user.name")}
         `,
     }),
-    new ReactRefreshPlugin(),
     new Dotenv(),
-    new BundleAnalyzerPlugin(),
+    ...(process.env.NODE_ENV === "production"
+      ? [new BundleAnalyzerPlugin()]
+      : [new ReactRefreshPlugin()]),
   ],
 };

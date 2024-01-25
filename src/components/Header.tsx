@@ -1,68 +1,22 @@
-import { Link, useLocation } from "react-router-dom";
-import {
-  Tabs,
-  TabList,
-  Tab,
-  Box,
-  Stack,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Image,
-} from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { Box, Stack, Button, Menu, MenuButton, MenuList, MenuItem, Image } from "@chakra-ui/react";
 import { useAuth } from "@/context/AuthContext";
 import { Avatar, AvatarBadge } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-
-const nav = [
-  { tabIndex: 0, to: "/", title: "Main" },
-  { tabIndex: 1, to: "/recoil", title: "Recoil" },
-  { tabIndex: 2, to: "/msw", title: "MSW" },
-  { tabIndex: 3, to: "/rq", title: "React Query" },
-  { tabIndex: 4, to: "/dialog", title: "Dialog" },
-  { tabIndex: 5, to: "/todo", title: "Todo" },
-  { tabIndex: 6, to: "/profile", title: "Profile" },
-  { tabIndex: 7, to: "/i18n", title: "i18n" },
-];
+import NavigationBar from "./NavigationBar";
 
 const Header = () => {
-  const [tabIndex, setTabIndex] = useState(0);
   const { profile, login, logout } = useAuth();
   const { i18n } = useTranslation();
-
-  const location = useLocation();
-
-  const handleTabsChange = (index: number) => {
-    setTabIndex(index);
-  };
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
-  useEffect(() => {
-    const currentTab = nav.find((item) => item.to === location.pathname);
-    if (currentTab) {
-      setTabIndex(currentTab.tabIndex);
-    }
-  }, [location]);
-
   return (
     <Box p="3">
       <Stack direction="row" spacing={2} align="center" justifyContent="space-between">
-        <Tabs index={tabIndex} onChange={handleTabsChange}>
-          <TabList>
-            {nav.map((item) => (
-              <Link key={item.tabIndex} to={item.to}>
-                <Tab>{item.title}</Tab>
-              </Link>
-            ))}
-          </TabList>
-        </Tabs>
+        <NavigationBar />
         <Stack direction="row" spacing={2}>
           {profile ? (
             <Box>
