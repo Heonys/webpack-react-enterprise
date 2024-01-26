@@ -1,4 +1,4 @@
-import { DialogContainer } from "@/hook/useDialog";
+import { DialogContainer } from "@/hooks/useDialog";
 import { Box, Stack } from "@chakra-ui/react";
 import { ReactElement, ReactNode } from "react";
 

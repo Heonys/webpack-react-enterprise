@@ -1,5 +1,5 @@
 import Dialog from "./Dialog";
-import { useDialog } from "@/hook/useDialog";
+import { useDialog } from "@/hooks/useDialog";
 import { Box, Button } from "@chakra-ui/react";
 
 const ErrorDialog = () => {

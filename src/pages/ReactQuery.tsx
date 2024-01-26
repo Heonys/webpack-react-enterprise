@@ -1,4 +1,4 @@
-import useUserQuery from "@/hook/useUserQuery";
+import useUserQuery from "@/hooks/useUserQuery";
 import { Box, Button, List, ListItem, Stack } from "@chakra-ui/react";
 
 const ReactQuery = () => {

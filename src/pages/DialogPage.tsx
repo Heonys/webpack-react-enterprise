@@ -1,5 +1,5 @@
 import DialogPageForm from "@/components/DialogPageForm";
-import { useDialog } from "@/hook/useDialog";
+import { useDialog } from "@/hooks/useDialog";
 import ErrorDialog from "@/components/ErrorDialog";
 import { Button } from "@chakra-ui/react";
 

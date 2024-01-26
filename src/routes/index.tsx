@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { DialogProvider } from "@/hook/useDialog";
+import { DialogProvider } from "@/hooks/useDialog";
 import RecoilPage from "@/pages/RecoilPage";
 import ServiceWorkerPage from "@/pages/ServiceWorkerPage";
 import ReactQuery from "@/pages/ReactQuery";
