@@ -11,6 +11,7 @@ module.exports = {
     "eslint-config-prettier",
     "plugin:jest/recommended",
     "plugin:storybook/recommended",
+    "plugin:cypress/recommended",
   ],
   overrides: [
     {
